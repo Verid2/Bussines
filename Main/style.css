@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    /* Új Zöldes-Bézses Sötét Paletta */
+    --bg-color: #121412; /* Nagyon mély, sötét zöldes-fekete */
+    --text-main: #f0eee4; /* Világos bézs (kellemesebb a szemnek, mint a hófehér) */
+    --text-muted: #99a098; /* Tompított szürkés-zöld */
+    --accent-1: #82a884; /* Kellemes, modern zsályazöld (Sage Green) */
+    --accent-2: #d8c3a5; /* Meleg bézs / homokszín */
+    --card-bg: #1c201c; /* Egy árnyalattal világosabb zöldes-fekete a kártyáknak */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Navigáció - Üveghatás hozzáigazítva a sötétzöldes háttérhez */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background: rgba(18, 20, 18, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(216, 195, 165, 0.05); /* Halvány bézs alsó vonal */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 400;
+    font-size: 0.95rem;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+/* Zöldes ragyogás, ha a menü fölé viszed az egeret */
+.nav-links a:hover {
+    color: var(--accent-1);
+    text-shadow: 0 0 10px rgba(130, 168, 132, 0.4);
+}
+
+/* Általános Szekciók */
+section {
+    padding: 6rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background: var(--accent-1);
+    bottom: -10px;
+    left: 0;
+    border-radius: 2px;
+}
+
+/* Hero Szekció */
+#hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+#hero h1 span {
+    background: linear-gradient(to right, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+}
+
+.btn {
+    padding: 0.8rem 2.5rem;
+    background: linear-gradient(45deg, var(--accent-1), var(--accent-2));
+    color: #121412; /* Sötét szöveg a világosabb gombon jobban olvasható */
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    display: inline-block;
+}
+
+/* Finom, meleg árnyék a gombnak */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(216, 195, 165, 0.2);
+}
+
+/* Készségek */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.skill-tag {
+    background: rgba(216, 195, 165, 0.05);
+    border: 1px solid rgba(216, 195, 165, 0.1);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--accent-2); /* Bézs szöveg a tageken */
+    transition: all 0.3s;
+}
+
+.skill-tag:hover {
+    background: rgba(130, 168, 132, 0.1); /* Zöldes háttér hovernél */
+    border-color: var(--accent-1);
+    color: var(--accent-1);
+    transform: translateY(-3px);
+}
+
+/* Projektek rács */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: transform 0.4s, box-shadow 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, var(--accent-1), var(--accent-2));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px
