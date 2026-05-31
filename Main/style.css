@@ -354,3 +354,48 @@ footer {
 .contact-btn span {
     font-size: 1.5rem;
 }
+
+
+
+#security-philosophy {
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.security-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 2rem;
+}
+
+.security-item {
+    /* A bézs egy nagyon tompa, sötétített verziója, ami passzol a sötét témához */
+    background: rgba(170, 170, 153, 0.25); 
+    color: var(--text-muted); 
+    padding: 30px;
+    border-radius: 20px;
+    /* Finom, alig látható keret, ami passzol az arany ékezetedhez */
+    border: 1px solid rgba(252, 211, 77, 0.1); 
+    transition: all 0.4s ease;
+}
+
+.security-item:hover {
+    background: rgba(245, 245, 220, 0.08);
+    border-color: rgba(252, 211, 77, 0.3);
+    transform: translateY(-5px);
+}
+
+.security-item h3 {
+    /* Az arany ékezetedet használjuk a címhez */
+    color: var(--accent-2); 
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.security-item p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}

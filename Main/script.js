@@ -9,3 +9,23 @@ window.addEventListener('scroll', () => {
         header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.05)';
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const emailLink = document.getElementById('contact-email');
+    const emailDisplay = document.getElementById('email-display');
+
+    if (emailLink) {
+        emailLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Az e-mail cím részekre bontva, hogy a forráskódban ne legyen kereshető
+            const part1 = "gergely.ficsur";
+            const part2 = "gmail.com";
+            const fullEmail = `${part1}@${part2}`;
+            
+            // Frissítjük a szöveget és megnyitjuk a levelezőt
+            emailDisplay.textContent = fullEmail;
+            window.location.href = `mailto:${fullEmail}`;
+        });
+    }
+});

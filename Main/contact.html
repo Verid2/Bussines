@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
     <title>Kapcsolat | Ficsúr Gergely</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
 
@@ -46,13 +48,13 @@
                     <p style="margin-bottom: 2rem;">Ha szimpatikus a profilom, keress bátran az alábbi platformok bármelyikén!</p>
                     
                     <div class="contact-links-vertical">
-                        <a href="mailto:gergely.ficsur@gmail.com" class="contact-btn">
-                            <span>📧</span> Küldj egy Emailt
+                        <a href="#" id="contact-email" class="contact-btn">
+                            <span>📧</span> <span id="email-display">Küldj egy Emailt</span>
                         </a>
-                        <a href="https://github.com/Verid2" target="_blank" class="contact-btn">
+                        <a href="https://github.com/Verid2" target="_blank" rel="noopener noreferrer" class="contact-btn" id="github-link">
                             <span>💻</span> Nézd meg a GitHubom
                         </a>
-                        <a href="https://linkedin.com" target="_blank" class="contact-btn">
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-btn">
                             <span>🤝</span> Csatlakozz LinkedIn-en
                         </a>
                     </div>

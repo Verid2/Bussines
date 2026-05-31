@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
     <title>Ficsúr Gergely | Junior Full Stack Fejlesztő</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
 
@@ -42,6 +44,25 @@
                 <span class="skill-tag">SQL (Alapok)</span>
             </div>
         </section>
+
+
+     <section id="security-philosophy">
+    <h2>Biztonságos Fejlesztés</h2>
+    <div class="security-list">
+        <div class="security-item">
+            <h3>Defenzív Programozás</h3>
+            <p>Paraméterezett lekérdezések a SQL injekciók megelőzésére.</p>
+        </div>
+        <div class="security-item">
+            <h3>XSS Védelem</h3>
+            <p>Input szanálás és szigorú Content Security Policy beállítása.</p>
+        </div>
+        <div class="security-item">
+            <h3>Adatvédelem</h3>
+            <p>HTTPS titkosítás és biztonságos adatkezelési protokollok.</p>
+        </div>
+    </div>
+</section>
 
         <section id="projects">
             <h2>Projektjeim</h2>
