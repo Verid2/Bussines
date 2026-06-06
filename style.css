@@ -138,22 +138,32 @@ footer { text-align: center; padding: 4rem 2rem; border-top: 1px solid rgba(255,
     padding: 2rem;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: 0.4s;
-    /* Új sorok a fix megjelenéshez: */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    transition: transform 0.4s, box-shadow 0.4s, border-color 0.4s;
+    position: relative;
+    overflow: hidden; /* Ez kell, hogy az animáció ne lógjon ki */
 }
 
-.card h3 {
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-    color: var(--text-main); /* Biztosítjuk, hogy a cím látható legyen */
+/* Ez az a bizonyos animációs csík a kártya tetején */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, var(--accent-1), var(--accent-2));
+    transform: scaleX(0); /* Alaphelyzetben nem látszik */
+    transform-origin: left;
+    transition: transform 0.4s ease;
 }
 
-.card p {
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
+/* Amikor ráviszed az egeret, a csík "kigördül" */
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    border-color: rgba(74, 222, 128, 0.2);
 }
