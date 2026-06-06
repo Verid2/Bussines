@@ -32,7 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const roles = ["Junior Full Stack Fejlesztő", "Biztonság-fókuszált kódoló", "Linux Rajongó"];
 let i = 0;
+const typewriter = document.getElementById('typewriter');
+
 setInterval(() => {
-    document.getElementById('typewriter').innerText = roles[i];
+    typewriter.innerText = roles[i];
     i = (i + 1) % roles.length;
-}, 3000);
+}, 3500);
