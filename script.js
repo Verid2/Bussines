@@ -29,3 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+const roles = ["Junior Full Stack Fejlesztő", "Biztonság-fókuszált kódoló", "Linux Rajongó"];
+let i = 0;
+setInterval(() => {
+    document.getElementById('typewriter').innerText = roles[i];
+    i = (i + 1) % roles.length;
+}, 3000);

@@ -399,3 +399,35 @@ footer {
     line-height: 1.6;
     font-size: 0.95rem;
 }
+
+.typing-container {
+    font-family: 'Courier New', monospace;
+    color: var(--accent-1);
+    font-size: 1.5rem;
+    min-height: 1.5em;
+    margin-bottom: 2rem;
+}
+
+.typing-container::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.card:hover h3 {
+    animation: glitch 0.3s linear;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); color: var(--accent-1); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); color: var(--accent-2); }
+    100% { transform: translate(0); }
+}
+
+.security-item {
+    border-left: 4px solid var(--accent-2); /* Egy vékony arany vonal, mint a biztonsági szint jelzése */
+    background: linear-gradient(135deg, rgba(170, 170, 153, 0.1), transparent);
+}
